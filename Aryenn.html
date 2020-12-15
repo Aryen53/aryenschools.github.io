@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale= 1.0" />
+<title>
+MACHAKOS UNIVERSITY</title>
+<p id="demo"></p>
+<script language="JavaScript">
+function laptops(){
+var laptop;
+var laptops[7]= [
+			'img src=download.jpg',
+'img src=download1.jpg',	'img src=download2.jpg',	'img src=download3.jpg',	'img src=download4.jpg'
+];
+for(laptop=0; laptop<laptop.length; laptop++){
+laptops[laptop];
+} 
+while(laptops<7)
+{
+
+}
+}
+</script>
+</head>
+<body>
+<script language="JavaScript">
+document.write("Hello "+name"!,Welcome and Book with us");
+</script>
+<div class="hdr"><br /><br /><br /><br />
+<div class="dropdown">
+<div class="background">
+<div class="transbox">
+<a href="GALLERY.php"><img  class="img" src="LAPTOP.png" /></a>
+<b>MACHAKOS UNIVERSITY </b></div></div>
+</div>
+<form action="action_page.php">
+<input class="search-area" type="search" name="text" placeholder="SEARCH">
+<input class="search-btn"  type="submit" name="submit" value="SEARCH"></form>
+<form class="form1">
+<div class="tooltip">
+<input class="dropbtn" type="button" value="NEXT" onclick='history.forward()'>
+<span class="tooltiptext">Click to go to next page</span>
+</div>
+</form><br /><br /><br /><br />
+<div class="dropdown">
+<button class="dropbtn">DISCOVER MACHAKOS</button>
+<div class="dropdown-content">
+<a href="REGISTERED.php">REGISTERED STUDENTS</a>
+<a href="OURSTAFF.php">OUR STAFF</a>
+<a href="OFFICERS.html">SCHOOL OFFICERS</a>
+</div></div>
+</div>
+<div>
+<h2 class="title">
+WELCOME TO MACHAKOS UNIVERSITY</h2>
+Machakos University was founded in 1957 as a Technical Training School by the then colonial Government. It was converted into Machakos Technical and Trade School in 1958, Machakos Technical School in 1967, Machakos University Collage in 2013 and chartered to Machakos University in October 2016.
+
+<section class="gallery-links">
+<div class="wrapper">
+<h2>Gallery</h2>
+<div class="gallery-container">
+<?php
+include_once 'includes/dbhh.inc.php';
+$sql = "SELECT * FROM gallery ORDER BY orderGallery DESC";
+$stmt = mysqli_stmt_init($con);
+if(!mysqli_stmt_prepare($stmt, $sql)){
+	echo "SQL statement failed!";
+}else{
+	mysqli_stmt_execute($stmt);
+	$result = mysqli_stmt_get_result($stmt);
+	while($row = mysqli_fetch_assoc($result)){
+	echo '<a href="#">
+<div style="background-image: url(uploads/Gallery/'.$row["imgFullNameGallery"].');">
+</div>
+<h3>'.$row["titleGallery"].'</h3>
+<p>'.$row["descGallery"].'</p></a>
+';	
+}
+}
+?>
+</div>
+<?php
+if(isset($_SESSION['username'])){
+echo '<div class="gallery-upload">
+<form action= "includes/mach-upload.inc.php" method="POST" enctype="multipart/form-data">
+<input type="text" name="filename" placeholder="File name..."><br />
+<input type="text" name="filetitle" placeholder="Image title..."><br />
+<input type="text" name="filedesc" placeholder="Image description..."><br />
+<input type="file" name="file"><br />
+<button type="submit" name="submit">UPLOAD</button>
+</form>
+</div>';}
+?>
+</div>
+</div>
+<div class="sect" align="center">
+<br /><br /><br />
+<div class="sectt"><br /><br />
+<button class="dropbtn"><a href="Aryenn.html">HOME</a></button><br /><br /><br />
+<button class="dropbtn"><a href="GALLERY.php">PICTURE GALLERY</a></button><br /><br /><br />
+<button class="dropbtn"><a href="assignmentsignup.php">SIGN UP AS STUDENT</a></button>
+</div>
+<div class="secttt">
+<br /><br /><br />
+<button class="dropbtn"><a href="REGISTERED.php">REGISTERED STUDENTS</a></button><br /><br /><br />
+<button class="dropbtn"><a href="ARYENCONTACT.html">CONTACT MACHAKOS</a></button><br /><br /><br />
+<button class="dropbtn"><a href="staffsignup.php">SIGN UP AS STAFF</a></button>
+
+</div>
+<div class="sectttt">
+<br /><br /><br />
+<button class="dropbtn"><a href="ARYENSIGNIN.html">LOGIN</a></button><br /><br /><br />
+<button class="dropbtn"><a href="OURSTAFF.php">OUR STAFF</a></button><br /><br /><br />
+<button class="dropbtn"><a href="ARYENCHAT.html">CHAT</a></button>
+</div>
+</div>
+<div class="fter">
+CREATED BY AronTheCoder#
+</div>
+</body>
+</html>

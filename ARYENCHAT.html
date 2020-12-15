@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ARYEN INFORMATION</title>
+<meta name="viewport" content="width=device-width, initial-scale= 1.0" />
+<style type="text/css">
+body
+{
+background-color:#4CAF50;
+background-attachment:fixed;
+background-repeat:repeat;
+background-position:center;
+background-size:cover;
+padding:3px;
+}
+.fieldset
+{
+color:white;
+text-align:center;
+float:center;
+}
+.button
+{
+background-color:green;
+}
+.resize
+{
+resize: none;
+}
+</style>
+<script>
+<!--
+{
+function button1()
+document.getElementById("button").innerHTML="Chat send successfully"
+}
+-->
+</script>
+<script>
+<!--
+{
+function button2()
+document.getElementById("button").innerHTML="Chat cancelled"
+}
+-->
+</script>
+</head>
+<body>
+<header class="fieldset">
+CHAT WITH US.
+</header>
+<form class="form">
+<a href="Aryenn.php"><input class="button" type="button" value="<PREVIOUS"></a>
+</form>
+<div class="fieldset">
+<form action="action_page.php" id="button">
+<fieldset>
+<legend class="fieldset">SEND YOUR CHAT TO US.</legend>
+<textarea required="required" placeholder="Write your text here" class="resize"></textarea><br />
+<input type="submit" value="SEND" >
+<input type="reset" value="CANCEL" onclick="button2()">
+</fieldset>
+</form>
+</div>
+</body>
+</html>
